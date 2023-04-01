@@ -1,0 +1,353 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@200;400;600&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
+
+
+
+/* Global */
+
+*{
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+a{
+text-decoration: none;
+display: block;
+}
+
+footer a{
+  display: inline-block;
+}
+
+a:hover{
+color: #cfab07;
+}
+
+input{
+  outline: none;
+  background: transparent;
+  padding:6px 3px;
+  border-bottom: 2px solid lightgray;
+}
+
+:disabled{
+  cursor: not-allowed;
+}
+
+form{
+  border-radius: 12px;
+  box-shadow: 0px 2px 14px #E7E7E7;
+}
+
+.separator{
+  height: 1px;
+}
+
+ul.pagination{
+  margin: 16px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  color: white;
+}
+
+ul.pagination li{
+  padding:4px 12px;
+  border: 1px solid white;
+  border-radius: 8px;
+}
+
+ul.pagination li:hover{
+  background-color: #232323;
+}
+ul.pagination li .active{
+  color: #cfab07;
+}
+
+/* Menu-toggle */
+
+#menuToggle
+{
+  /* display: block; */
+  position: absolute;
+  right: 50px;
+  z-index:100;
+  
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle input
+{
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  
+  cursor: pointer;
+  
+  opacity: 0; 
+  z-index: 2; 
+  
+  -webkit-touch-callout: none;
+}
+
+
+#menuToggle span
+{
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  
+  background: #cdcdcd;
+  border-radius: 3px;
+  
+  z-index: 1;
+  
+  transform-origin: 4px 0px;
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),opacity 0.55s ease;
+}
+
+#menuToggle span:first-child
+{
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2)
+{
+  transform-origin: 0% 100%;
+}
+
+#menuToggle input:checked ~ span
+{
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #232323;
+}
+
+#menuToggle input:checked ~ span:nth-last-child(3)
+{
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+#menuToggle input:checked ~ span:nth-last-child(2)
+{
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+#menu
+{
+  position: absolute;
+  right: -50px;
+  width: 300px;
+  margin: -100px 0 0 -50px;
+  padding: 50px;
+  padding-top: 125px;
+  
+  list-style-type: none;
+  -webkit-font-smoothing: antialiased;
+  
+  transform: translateX(300px);
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+#menu li
+{
+  padding: 10px 0;
+  font-size: 22px;
+}
+
+#menuToggle input:checked ~ ul
+{
+  transform: none;
+}
+
+/* opportunities */
+
+#tradingview_widget_wrapper div:nth-child(2){
+  display: none;
+}
+
+.opor-slider .slick-arrow.slick-next{
+  right: -5px;
+  z-index: 5;
+}
+.opor-slider .slick-arrow.slick-prev{
+  left: -5px;
+  z-index: 5;
+}
+
+/* trading-course */
+
+.trading-course{
+  background-image: url(../src/components/assets/images/wave1.png);
+}
+
+.trading-course div img{
+  margin-top: -96px;
+}
+
+/* Footer */
+
+.footer{
+  background-image: url(../src/components/assets/images/footer/Mask\ group.png);
+}
+
+/* trading-forex */
+.trading-forex{
+  background-image: url(../src/components/assets/images/circles.png);
+}
+
+/* @media (max-width:"768px") {
+  .trading-forex{
+  background-image: url(../src/components/assets/images/wave3.png);
+}
+} */
+
+/* hero */
+
+.hero,
+.blogs{
+  background-image: url(../src/components/assets/images/course//exness-blog-desktop-header.jpg.png);
+  background-position: center;
+}
+
+/* subscribe */
+
+.subscribe input{
+  background-color: #464343;
+  border: none;
+}
+
+/* Gallary */
+
+.gallary-item{
+  margin:8px;
+  width: calc(100%/3 - 16px);
+}
+
+@media (max-width:800px) {
+  .gallary-item{
+    width: calc(100%/2 - 16px);
+  }
+}
+
+@media (max-width:860px) {
+  .ready img{
+    height: 250px;
+  }
+}
+
+
+.shares .share-diagram .tradingview-widget-container iframe{
+  display: none;
+}
+
+/* table */
+
+.content-table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.content-table thead tr {
+  background-color: #0B0C19;
+  color: #ffffff;
+  text-align: left;
+  font-weight: bold;
+}
+
+.content-table th{
+font-size: 20px;
+}
+.content-table tr{
+font-size: 16px;
+}
+
+.content-table th,
+.content-table td {
+  padding: 12px 15px;
+}
+
+.content-table tbody tr {
+  border-bottom: 1px solid #dddddd;
+}
+
+.content-table tbody tr:nth-of-type(even) {
+  background-color: #f3f3f3;
+}
+
+.content-table tbody tr:nth-of-type(even):hover {
+  background-color: #3131317d;
+}
+
+
+.content-table tbody tr:last-of-type {
+  border-bottom: 2px solid #0B0C19;
+}
+
+/* Slider */
+
+.slider-items .slider-wrapper{
+  border-radius: 0 10px 10px 0;
+}
+.slider-items div img{
+  border-radius: 10px 0 0 10px ;
+  object-fit: cover;
+}
+
+.opor-slider .slider-item{
+  display: flex !important;
+}
+
+.opor-slider .slick-arrow.slick-next{
+  right: 8px;
+}
+
+.opor-slider .slick-arrow.slick-prev{
+  left: 8px;
+}
+
+.slick-dots .slick-active button:before {
+color: white !important;
+}
+
+@media (min-width:780px) {
+  .slider-items p{
+    padding: 25px;
+  }  
+}
+
+
+@media (max-width:980px) {
+  .content-table th{
+font-size: 12px
+}
+.content-table tr{
+font-size: 12px;
+}
+}
+
+@media (max-width:815px) {
+.steps{
+  /* flex-direction: column-reverse; */
+  align-items: center;
+}
+}
